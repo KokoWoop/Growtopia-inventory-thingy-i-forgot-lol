@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GT Inv system</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="inventory-container">
+        <div id="inventory" class="inventory"></div>
+        <div class="controls">
+            <input type="text" id="item-input" placeholder="Type item name" />
+            <div id="suggestions" class="suggestions"></div>
+            <input type="number" id="amount-input" placeholder="Amount" />
+            <button id="add-item-btn">Add to Inv</button>
+
+            <select id="pack-select" multiple size="3">
+            </select>
+            <input type="number" id="pack-amount-input" placeholder="Number of Packs" value="1" min="1" />
+            <button id="add-pack-btn">Add Packs</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
