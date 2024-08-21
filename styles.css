@@ -6,7 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #1e1e1e;
-    color: #f0f0f0
+    color: #f0f0f0;
 }
 
 .inventory-container {
@@ -16,7 +16,10 @@ body {
     background-color: #2a2a2a;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .5)
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    width: 90%;
+    max-width: 1200px;
+    margin: 10px;
 }
 
 .inventory {
@@ -27,13 +30,13 @@ body {
     width: 1000px;
     height: 500px;
     margin-bottom: 20px;
-    transition: .3s ease-in-out
+    transition: .3s ease-in-out;
 }
 
 .controls,
 .slot {
     display: flex;
-    width: 100%
+    width: 100%;
 }
 
 .slot {
@@ -46,19 +49,19 @@ body {
     align-items: center;
     border-radius: 8px;
     overflow: hidden;
-    transition: transform .3s, background-color .3s
+    transition: transform .3s, background-color .3s;
 }
 
 .slot:hover {
     transform: scale(1.05);
-    background-color: #4a4a4a
+    background-color: #4a4a4a;
 }
 
 .slot img {
     width: 80%;
     height: 80%;
     image-rendering: pixelated;
-    transition: transform .3s
+    transition: transform .3s;
 }
 
 .slot span {
@@ -69,17 +72,17 @@ body {
     color: #f0f0f0;
     padding: 2px 5px;
     border-radius: 3px;
-    font-size: 12px
+    font-size: 12px;
 }
 
 .slot img:hover {
-    transform: rotate(5deg) scale(1.1)
+    transform: rotate(5deg) scale(1.1);
 }
 
 .controls {
     flex-direction: column;
     align-items: center;
-    gap: 15px
+    gap: 15px;
 }
 
 #amount-input,
@@ -92,14 +95,14 @@ body {
     border: 2px solid #444;
     background-color: #2a2a2a;
     color: #f0f0f0;
-    transition: border-color .3s
+    transition: border-color .3s;
 }
 
 #amount-input:focus,
 #item-input:focus,
 #pack-amount-input:focus,
 #pack-select:focus {
-    border-color: #888
+    border-color: #888;
 }
 
 #add-item-btn,
@@ -111,19 +114,19 @@ body {
     border: 2px solid #444;
     background-color: #444;
     color: #f0f0f0;
-    transition: background-color .3s, border-color .3s
+    transition: background-color .3s, border-color .3s;
 }
 
 #pack-select,
 .suggestions {
     background-color: #2a2a2a;
-    width: 250px
+    width: 250px;
 }
 
 #add-item-btn:hover,
 #add-pack-btn:hover {
     background-color: #555;
-    border-color: #888
+    border-color: #888;
 }
 
 #pack-select {
@@ -133,7 +136,7 @@ body {
     border: 2px solid #444;
     color: #f0f0f0;
     height: 120px;
-    transition: border-color .3s
+    transition: border-color .3s;
 }
 
 .suggestions {
@@ -142,15 +145,66 @@ body {
     border-radius: 8px;
     max-height: 150px;
     overflow-y: auto;
-    transition: .3s ease-in-out
+    transition: .3s ease-in-out;
 }
 
 .suggestion {
     padding: 10px;
     cursor: pointer;
-    transition: background-color .3s
+    transition: background-color .3s;
 }
 
 .suggestion:hover {
-    background-color: #3a3a3a
+    background-color: #3a3a3a;
+}
+
+@media (max-width: 768px) {
+    .inventory-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .inventory {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        width: 100%;
+        height: auto;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    #amount-input,
+    #item-input,
+    #pack-amount-input,
+    #pack-select {
+        width: 100%;
+    }
+
+    #add-item-btn,
+    #add-pack-btn {
+        width: 100%;
+    }
+
+    .slot {
+        aspect-ratio: 1;
+    }
+
+    .suggestions {
+        max-height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .inventory {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    #pack-select {
+        height: auto;
+    }
 }
